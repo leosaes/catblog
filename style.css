@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --color-footer: #387E96;
+  --color-header: #065E7C;
+  --color-titulo: #202024;
+  --color-p: #121214;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+}
+
+.page {
+  width: 43rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  height: 7.2rem;
+  background-color: var(--color-header);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+
+  padding: 1.6rem 2.8rem;
+}
+
+header img:first {
+  width: 4rem;
+  height: 4rem;
+}
+
+.input-wrapper input{
+  width: 100%;
+  height: 100%;
+
+  border-radius: 4px;
+  border: none;
+  
+  padding: 1.2rem 1.4rem;
+
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.input-wrapper input::placeholder {
+  color: white;
+  font-weight: 600;
+}
+
+.input-wrapper label {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+header img:last-child {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo {
+  margin: 3rem 2.6rem 3.4rem 2.2rem;
+}
+
+h1 {
+  color: var(--color-titulo);
+  font-size: 2.4rem;
+  line-height: 160%;
+  font-weight: 700;
+}
+
+.botoes {
+  margin-top: 0.8rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+}
+
+#likes:hover {
+  opacity: 70%;
+}
+
+#dislikes:hover {
+  opacity: 70%;
+}
+
+.conteudo p {
+  color: var(--color-p);
+  font-size: 1.6rem;
+  line-height: 160%;
+  text-align: justify;
+}
+
+#catinhu {
+  width: 100%;
+}
+
+#catinhu:hover {
+  filter: brightness(1.2);
+  transition-property: all;
+  transition-duration: 1s;
+}
+
+.aside {
+  margin: 0 2.4rem 4rem 2.2rem;
+
+}
+
+.artigos {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3.2rem;
+}
+
+.artigos img {
+  width: 15.1rem;
+  height: 8.4rem;
+  transition-property: all; 
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+.artigos img:hover {
+  width: 17.3rem;
+  height: 11rem;
+  object-fit: cover;
+  border-radius: 5px;
+  filter: brightness(1.2);
+
+}
+
+.texto {
+  margin-left: 1.6rem;
+}
+
+.texto h2 {
+  font-size: 1.8rem;
+  line-height: 160%;
+  font-weight: 700;
+  color: var(--color-titulo);
+}
+
+.texto p {
+  font-size: 1.4rem;
+  line-height: 160%;
+  color: var(--color-p);
+}
+
+footer {
+  width: 100%;
+  height: 6.4rem;
+  background-color: var(--color-footer);
+  padding: 2.7rem 0;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+
+main {
+  animation: beginning 2s ease-out;
+}
+
+@keyframes beginning {
+  0% {
+    transform: translateX(-100vh);
+    opacity: 20%;
+  }
+
+  50% {
+    transform: translateX(0vh);
+  }
+}
+
+.aside h1, .artigos {
+  animation: side 2s ease-out;
+
+}
+
+@keyframes side {
+  0% {
+    transform: translateX(100vh);
+    opacity: 20%;
+  }
+
+  50% {
+    transform: translateX(0vh);
+  }
+}
+
+header img, header form {
+  animation: top 1.5s ease-in;
+}
+
+@keyframes top {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 20%;
+  }
+
+  50%{
+    transform: translateY(0vh);
+
+  }
+}
+
+footer p {
+  animation: bot 2s ease-in;
+
+}
+
+@keyframes bot {
+  0% {
+    transform: translateY(100vh);
+    opacity: 20%;
+
+  }
+
+  50%{
+    transform: translateY(0vh);
+
+  }
+}
+
+@media (min-width: 80rem) {
+  .page {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "main main aside"
+    "footer footer footer";
+    row-gap: 3.4rem;
+    width: 100%;
+    height: 100vh;
+  }
+
+  header {
+    grid-area: header;
+    padding: 1.6rem 11.2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+  }
+
+  main {
+    grid-area: main;
+    margin-left: 11rem;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 36.6rem;
+
+    margin-bottom: 3.2rem;
+  }
+
+  .botoes {
+    margin: 0;
+  }
+
+  .aside {
+    grid-area: aside;
+    width: 38.4rem;
+    margin-right: 11rem;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+}
